@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>maqRefri</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clock,reset,w</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library ieee;
+use ieee.std_logic_1164.all;
+
+entity maqRefri is
+    port(
+        clock , reset , w : IN STD_LOGIC;
+        z : OUT STD_LOGIC
+        );
+end maqRefri;
+
+architecture Behavior OF maqRefri is
+    type Tipo_estado is (A,B,C,D);
+    signal y_atual, y_prox : Tipo_estado;
+begin
+    process (w, y_atual)
+    begin
+        case y_atual is
+            when A =&gt;
+                if w = &apos;0&apos; then
+                    y_prox &lt;= B;
+                else
+                    y_prox &lt;= C;
+                end if;
+            when B =&gt;
+                if w = &apos;0&apos; then
+                    y_prox &lt;= C;
+                else
+                    y_prox &lt;= D;
+                end if;
+            when C =&gt;
+                if w = &apos;0&apos; then
+                    y_prox &lt;= D;
+                else
+                    y_prox &lt;= D;
+                end if;
+             when D =&gt;
+                if w = &apos;0&apos; then
+                    y_prox &lt;= A;
+                else
+                    y_prox &lt;= A;
+                end if;
+        end case;
+    end process;
+
+    process (clock, reset)
+    begin
+        if reset = &apos;1&apos; then
+            y_atual &lt;= A;
+        elsif (clock&apos;event and clock = &apos;1&apos;) then
+            y_atual &lt;= y_prox;
+        end if;
+    end process;
+    z &lt;= &apos;1&apos; when y_atual = D else &apos;0&apos;;
+end Behavior;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>z</string>
+        </entry>
+      </elementAttributes>
+      <pos x="720" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>LED</elementName>
+      <elementAttributes/>
+      <pos x="820" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes/>
+      <pos x="560" y="220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes/>
+      <pos x="560" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes/>
+      <pos x="560" y="320"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="560" y="400"/>
+      <p2 x="640" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="320"/>
+      <p2 x="720" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="780" y="320"/>
+      <p2 x="820" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="640" y="340"/>
+      <p2 x="720" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="220"/>
+      <p2 x="640" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="640" y="300"/>
+      <p2 x="720" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="640" y="220"/>
+      <p2 x="640" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="640" y="340"/>
+      <p2 x="640" y="400"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
