@@ -1,0 +1,85 @@
+#div-logo{
+    background-color: #00693E;
+}
+
+#rodape{
+    background-color: #00693E;
+    margin-top: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#principal{
+    font-size: 30px;
+}
+
+#cc{
+    margin-right: 30px;
+    width: 100px;
+}
+
+#container-cc{
+    display: none;
+    margin-bottom: 120px;
+}
+
+#container-fil{
+    display: none;
+    margin-bottom: 120px;
+}
+
+#selecao{
+    margin: 30px;
+}
+
+.custom-border{
+    border: 1px solid black;
+}
+
+#filosofia{
+    margin-right: 30px;
+    width: 100px;
+}
+
+
+#botoes {
+    display: flex;
+}
+
+#escolha{
+    margin-right: 20px;
+    margin-left: 400px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+#body{
+    background-color: white;
+}
+
+.descricao{
+    font-size: 20px;
+    text-align: center;
+}
+
+#tema{
+    width: 80px;
+    height: 35px;
+    text-align: center;
+}
+
+#logo{
+    width: 200px;
+    height: 80px;
+}
+
+#h1{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#dias{
+    font-weight: bold;
+}

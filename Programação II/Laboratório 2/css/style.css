@@ -1,0 +1,82 @@
+#div1{
+    background-color: #00693E;
+    text-align: center;
+}
+
+#cc{
+    margin-right: 30px;
+    width: 100px;
+}
+
+#filosofia{
+    margin-right: 30px;
+    width: 100px;
+}
+
+
+#botoes {
+    display: flex;
+}
+
+#escolha{
+    margin-right: 20px;
+    margin-left: 400px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+#body{
+    background-color: white;
+}
+
+.descricao{
+    font-size: 20px;
+    text-align: center;
+}
+
+#tema{
+    width: 80px;
+    height: 35px;
+    text-align: center;
+}
+
+#logo{
+    text-align: center;
+    width: 200px;
+    height: 80px;
+}
+
+#h1{
+    text-align: center;
+}
+
+.tabelas{
+    border: 1px solid black;
+    margin: auto;
+}
+
+.tabelas td{
+    border: 1px solid black;
+    width: 250px;
+    height: 100px;
+    font-size: 30px;
+}
+
+.tabelas tr{
+    text-align: center;
+}
+
+#dias{
+    font-weight: bold;
+}
+
+#divcc{
+    text-align: center;
+    display: none;
+}
+
+#divfilo{
+    text-align: center;
+    display: none;
+}
